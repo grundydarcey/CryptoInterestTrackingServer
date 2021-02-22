@@ -20,6 +20,17 @@ app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
+app.post('/', (req, res) => {
+  console.log(req.body);
+  res
+    .send('POST request received');
+});
+
+/*app.get('/', (req, res) => {
+  res
+    .send('A git request');
+});*/
+
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === 'production') {
